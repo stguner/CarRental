@@ -12,12 +12,14 @@
 
   <title>Hello, world!</title>
 </head>
-
+  <!-- Navbar başlangıcı-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    
-    <a class="navbar-brand" href="#"><img src="/img/rent_a_car_logo.jpg" class="rounded-circle" alt="STG Rent a Car" height="50px"> STG RENT A CAR</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+    <a class="navbar-brand" href="#"><img src="/img/rent_a_car_logo.jpg" class="rounded-circle" alt="STG Rent a Car"
+        height="50px"> STG RENT A CAR</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -32,20 +34,126 @@
           <a class="nav-link fs-5" href="/html/contactus.html"> <img src="/img/phone.png" height="25px"> Contact Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fs-5" href="/html/login_register.html"> <img src="/img/login.png" height="25px"> Login/Register</a>
-        </li> 
+          <a class="nav-link fs-5" href="/html/login_register.html"> <img src="/img/login.png" height="25px"> Login/Signup</a>
+        </li>
       </ul>
-      
+
     </div>
   </div>
 </nav>
+  <!-- Navbar bitişi-->
+
+  <!-- Carousel başlangıç-->
+<div class="cointainer" style="height: 200px; background-image: linear-gradient(rgba(151, 146, 142, 0.542),rgba(0, 0, 0, 0.762)),url(/img/mercedes_bg.jpg); background-size: cover;
+background-position: center center; background-attachment: fixed ">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4 bg-dark">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+            aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+            aria-label="Slide 5"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/img/fast_car_mustang.jpg" class="d-block w-100" alt="Mustang" height="200px">
+          </div>
+          <div class="carousel-item">
+            <img src="/img/mercedes.jpg" class="d-block w-100" height="200px">
+          </div>
+          <div class="carousel-item">
+            <img src="/img/honda.jpg" class="d-block w-100" height="200px">
+          </div>
+          <div class="carousel-item">
+            <img src="/img/bmw.jpg" class="d-block w-100" height="200px">
+          </div>
+          <div class="carousel-item">
+            <img src="/img/slow_car.jpg" class="d-block w-100" height="200px">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+      </div>
+      <div class="col-lg-4"></div>
+    </div>
+  </div>
+</div>
+  <!-- Carousel bitiş-->
+
+  <hr>
+  <div class="container bg-dark p-2 text-white mb-3">
+    <div class="row">
+        
+            <form class="form d-inline-flex row row-cols-3 mt-2">
+                
+                <div class="col mb-2">
+                <label class="form-label" for="rentDay">Rent Day:</label>
+                <input type="date" class="form-control" id="rentDay" name="rentDay">
+                </div>
+
+                <div class="col mb-2">
+                    <label class="form-label" for="rentTime">Rent Time:</label>
+                    <input type="time" class="form-control" id="rentTime" name="rentTime">
+                </div>
+
+                <div class="col mb-2">
+                    <label class="form-label" for="city">City:</label>
+                    <select name="city" class="form-control" id="city">
+                        <option value="kaş">Kaş</option>
+                        <option value="kemer">Kemer</option>
+                        <option value="konyaaltı">Konyaaltı</option>
+                        <option value="manavgat">Manavgat</option>
+                    </select>
+                </div>
+
+                <div class="col mb-3">
+                    <label class="form-label" for="returnDay">Return Day:</label>
+                    <input type="date" class="form-control" id="returnDay" name="returnDay">
+                    </div>
+                <div class="col mb-3">
+                        <label class="form-label" for="returnTime">Rent Time:</label>
+                        <input type="time" class="form-control" id="returnTime" name="returnTime">
+                </div>
+                
+                <div class="col mt-4">
+                    <button class="btn btn-success btn-outline-warning">Rent a Car</button>
+                </div>
+                
 
 
+            </form>
+        
+    </div>
+</div>
 
+
+<!--footer-->
+<div class="text-center p-2 mt-5 bg-dark text-muted fixed-bottom" style="background-color: rgba(88, 88, 88, 0.181);">
+  © 2022 Copyright:
+  <span class="fw-bold">Süleyman Türker Güner</span>
+</div>
+<!--footer-->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
-</body>
+  </body>
 
 </html>
