@@ -45,62 +45,91 @@
 <!-- Navbar bitişi-->
 
 <!-- Carousel başlangıç-->
-<div class="cointainer"
-  style="height: 300px; background-image: linear-gradient(rgba(255, 132, 0, 0.542),rgba(255, 255, 255, 0.762))">
-  <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4 bg-dark">
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-            aria-label="Slide 4"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
-            aria-label="Slide 5"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="/img/fast_car_mustang.jpg" class=" w-100" alt="Mustang" height="300px">
-          </div>
-          <div class="carousel-item">
-            <img src="/img/mercedes.jpg" class=" w-100" height="300px">
-          </div>
-          <div class="carousel-item">
-            <img src="/img/honda.jpg" class="w-100" height="300px">
-          </div>
-          <div class="carousel-item">
-            <img src="/img/bmw.jpg" class="d-flex w-100" height="300px">
-          </div>
-          <div class="carousel-item">
-            <img src="/img/slow_car.jpg" class="d-flex w-100" height="300px">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-
+<div id="myCarousel" class="carousel slide bg-secondary" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class="active"
+      aria-current="true"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" class="" aria-label="Slide 4"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item">
+      <div class="text-center">
+      <img src="/img/mustang-2.png" class="bd-placeholder-img" width="60%" height="500px" aria-hidden="true"
+        preserveAspectRatio="xMidYMid slice" focusable="false">
+      </img>
       </div>
-      <div class="col-lg-4"></div>
+
+      <div class="container">
+        <div class="carousel-caption text-start">
+          <h1 class="text-light">MUSTANG</h1>
+          <p class="text-light"> <b>MODEL 2022</b> </p>
+          <p><a class="btn btn-lg btn-dark" href="#">Rent Now</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="text-center">
+        <img src="/img/bmw-2.png" class="bd-placeholder-img" width="60%" height="500px" aria-hidden="true"
+          preserveAspectRatio="xMidYMid slice" focusable="false">
+        </img>
+        </div>
+
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>BMW</h1>
+          <p> <b> MODEL 2022</b></p>
+          <p><a class="btn btn-lg btn-dark" href="#">Rent Now</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="text-center">
+        <img src="/img/mercedes-2.png" class="bd-placeholder-img" width="60%" height="500px" aria-hidden="true"
+          preserveAspectRatio="xMidYMid slice" focusable="false">
+        </img>
+        </div>
+
+      <div class="container">
+        <div class="carousel-caption text-end">
+          <h1 class="text-light">MERCEDES</h1>
+          <p class="text-light"> <b> MODEL 2020</b></p>
+          <p><a class="btn btn-lg btn-dark" href="#">Rent Now</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item active">
+      <div class="text-center">
+        <img src="/img/honda-2.png" class="bd-placeholder-img" width="60%" height="500px" aria-hidden="true"
+          preserveAspectRatio="xMidYMid slice" focusable="false">
+        </img>
+        </div>
+      <div class="container">
+        <div class="carousel-caption text-end">
+          <h1 class="text-light">HONDA</h1>
+          <p class="text-light"> <b>MODEL 2021</b> </p>
+          <p><a class="btn btn-lg btn-dark" href="#">Rent Now</a></p>
+        </div>
+      </div>
     </div>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">السابق</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">التالي</span>
+  </button>
 </div>
 <!-- Carousel bitiş-->
 
 <!-- renting başlangıç-->
 <hr>
-<div class="container bg-dark p-2 text-white mb-3">
+<div class="container bg-secondary p-2 text-white mb-3">
   <div class="row">
 
     <form class="form d-inline-flex row row-cols-3 mt-2">
@@ -135,12 +164,12 @@
       </div>
 
       <div class="col mb-2">
-        <label class="form-label" for="city">Car:</label>
-        <select name="city" class="form-control" id="city">
-          <option value="kaş">Mustang</option>
-          <option value="kemer">Mercedes</option>
-          <option value="konyaaltı">BMW</option>
-          <option value="manavgat">Honda</option>
+        <label class="form-label" for="car">Car:</label>
+        <select name="car" class="form-control" id="car">
+          <option value="Mustang">Mustang</option>
+          <option value="Mercedes">Mercedes</option>
+          <option value="BMW">BMW</option>
+          <option value="Honda">Honda</option>
         </select>
       </div>
 
@@ -162,8 +191,6 @@
 <!-- renting bitiş-->
 <!-- tanıtım alanı başlangıç-->
 <div class="container marketing">
-
-  <!-- Three columns of text below the carousel -->
   <div class="row">
     <div class="col-lg-4">
       <img src="/img/mercedes.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140" role="img"
@@ -176,7 +203,8 @@
         nesciunt voluptatem minus, autem provident reprehenderit fugiat illum sit saepe repudiandae possimus, modi
         maiores debitis quis! Animi architecto maxime ipsum?</p>
       <p><a class="btn btn-secondary" href="#"> Rent Mercedes </a></p>
-    </div><!-- /.col-lg-4 -->
+    </div>
+
     <div class="col-lg-4">
       <img src="/img/bmw.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140" role="img"
         aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -187,7 +215,7 @@
         quo provident soluta atque officia deserunt velit ratione delectus? Pariatur sint voluptatem non magnam aliquid,
         incidunt facilis quidem rerum ipsum, delectus, voluptas enim.</p>
       <p><a class="btn btn-secondary" href="#">Rent BMW</a></p>
-    </div><!-- /.col-lg-4 -->
+    </div>
     <div class="col-lg-4">
       <img src="/img/honda.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140" role="img"
         aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -199,8 +227,8 @@
         laboriosam architecto quo accusantium odio quaerat corporis itaque ipsum magni quos modi, eligendi et similique
         nobis natus, voluptate mollitia! Repudiandae!</p>
       <p><a class="btn btn-secondary" href="#">Rent Hyundai</a></p>
-    </div><!-- /.col-lg-4 -->
-  </div><!-- /.row -->
+    </div>
+  </div>
 
 
 
@@ -215,9 +243,9 @@
         nemo.</p>
     </div>
     <div class="col-md-5">
-      <img src="/img/clean_cars.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"
-        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-        preserveAspectRatio="xMidYMid slice" focusable="false">    
+      <img src="/img/clean_cars.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+        width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+        preserveAspectRatio="xMidYMid slice" focusable="false">
       </img>
 
     </div>
@@ -234,7 +262,8 @@
       </p>
     </div>
     <div class="col-md-5 order-md-1">
-      <img src="/img/fast_service.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"
+      <img src="/img/fast_service.jpg"
+        class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"
         xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
         preserveAspectRatio="xMidYMid slice" focusable="false">
       </img>
@@ -252,11 +281,10 @@
         delectus accusantium, ipsum corrupti laborum dolorum id voluptate.</p>
     </div>
     <div class="col-md-5">
-      <img src="/img/easy_payment.jpg" 
-      class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"
-        role="img" aria-label="Placeholder: 500x500"
-        preserveAspectRatio="xMidYMid slice" focusable="false">
-    </img>
+      <img src="/img/easy_payment.jpg"
+        class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"
+        role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+      </img>
 
     </div>
   </div>
@@ -268,7 +296,7 @@
 
 
 <!--footer-->
-<div class="text-center p-2 mt-5 bg-dark text-muted fixed-bottom" style="background-color: rgba(88, 88, 88, 0.181);">
+<div class="text-center p-2 mt-5 bg-dark text-muted" style="background-color: rgba(88, 88, 88, 0.181);">
   © 2022 Copyright:
   <span class="fw-bold">Süleyman Türker Güner</span>
 </div>
