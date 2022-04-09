@@ -12,7 +12,7 @@
 
   <title>Hello, world!</title>
 </head>
-  <!-- Navbar başlangıcı-->
+<!-- Navbar başlangıcı-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
 
@@ -34,21 +34,22 @@
           <a class="nav-link fs-5" href="/html/contactus.html"> <img src="/img/phone.png" height="25px"> Contact Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fs-5" href="/html/login_register.html"> <img src="/img/login.png" height="25px"> Login/Signup</a>
+          <a class="nav-link fs-5" href="/html/login_register.html"> <img src="/img/login.png" height="25px">
+            Login/Signup</a>
         </li>
       </ul>
 
     </div>
   </div>
 </nav>
-  <!-- Navbar bitişi-->
+<!-- Navbar bitişi-->
 
-  <!-- Carousel başlangıç-->
-<div class="cointainer" style="height: 200px; background-image: linear-gradient(rgba(151, 146, 142, 0.542),rgba(0, 0, 0, 0.762)),url(/img/mercedes_bg.jpg); background-size: cover;
-background-position: center center; background-attachment: fixed ">
+<!-- Carousel başlangıç-->
+<div class="cointainer"
+  style="height: 300px; background-image: linear-gradient(rgba(255, 132, 0, 0.542),rgba(255, 255, 255, 0.762))">
   <div class="row">
-    <div class="col-lg-4"></div>
-    <div class="col-lg-4 bg-dark">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 bg-dark">
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -64,19 +65,19 @@ background-position: center center; background-attachment: fixed ">
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="/img/fast_car_mustang.jpg" class="d-block w-100" alt="Mustang" height="200px">
+            <img src="/img/fast_car_mustang.jpg" class=" w-100" alt="Mustang" height="300px">
           </div>
           <div class="carousel-item">
-            <img src="/img/mercedes.jpg" class="d-block w-100" height="200px">
+            <img src="/img/mercedes.jpg" class=" w-100" height="300px">
           </div>
           <div class="carousel-item">
-            <img src="/img/honda.jpg" class="d-block w-100" height="200px">
+            <img src="/img/honda.jpg" class="w-100" height="300px">
           </div>
           <div class="carousel-item">
-            <img src="/img/bmw.jpg" class="d-block w-100" height="200px">
+            <img src="/img/bmw.jpg" class="d-flex w-100" height="300px">
           </div>
           <div class="carousel-item">
-            <img src="/img/slow_car.jpg" class="d-block w-100" height="200px">
+            <img src="/img/slow_car.jpg" class="d-flex w-100" height="300px">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -95,53 +96,175 @@ background-position: center center; background-attachment: fixed ">
     </div>
   </div>
 </div>
-  <!-- Carousel bitiş-->
+<!-- Carousel bitiş-->
 
-  <hr>
-  <div class="container bg-dark p-2 text-white mb-3">
-    <div class="row">
-        
-            <form class="form d-inline-flex row row-cols-3 mt-2">
-                
-                <div class="col mb-2">
-                <label class="form-label" for="rentDay">Rent Day:</label>
-                <input type="date" class="form-control" id="rentDay" name="rentDay">
-                </div>
+<!-- renting başlangıç-->
+<hr>
+<div class="container bg-dark p-2 text-white mb-3">
+  <div class="row">
 
-                <div class="col mb-2">
-                    <label class="form-label" for="rentTime">Rent Time:</label>
-                    <input type="time" class="form-control" id="rentTime" name="rentTime">
-                </div>
+    <form class="form d-inline-flex row row-cols-3 mt-2">
 
-                <div class="col mb-2">
-                    <label class="form-label" for="city">City:</label>
-                    <select name="city" class="form-control" id="city">
-                        <option value="kaş">Kaş</option>
-                        <option value="kemer">Kemer</option>
-                        <option value="konyaaltı">Konyaaltı</option>
-                        <option value="manavgat">Manavgat</option>
-                    </select>
-                </div>
+      <div class="col mb-2">
+        <label class="form-label" for="rentDay">Rent Day:</label>
+        <input type="date" class="form-control" id="rentDay" name="rentDay">
+      </div>
 
-                <div class="col mb-3">
-                    <label class="form-label" for="returnDay">Return Day:</label>
-                    <input type="date" class="form-control" id="returnDay" name="returnDay">
-                    </div>
-                <div class="col mb-3">
-                        <label class="form-label" for="returnTime">Rent Time:</label>
-                        <input type="time" class="form-control" id="returnTime" name="returnTime">
-                </div>
-                
-                <div class="col mt-4">
-                    <button class="btn btn-success btn-outline-warning">Rent a Car</button>
-                </div>
-                
+      <div class="col mb-2">
+        <label class="form-label" for="rentTime">Rent Time:</label>
+        <input type="time" class="form-control" id="rentTime" name="rentTime">
+      </div>
+
+      <div class="col mb-2">
+        <label class="form-label" for="city">City:</label>
+        <select name="city" class="form-control" id="city">
+          <option value="Antalya">Antalya</option>
+          <option value="Ankara">Ankara</option>
+          <option value="İstanbul">İstanbul</option>
+          <option value="İzmir">İzmir</option>
+        </select>
+      </div>
+
+      <div class="col mb-3">
+        <label class="form-label" for="returnDay">Return Day:</label>
+        <input type="date" class="form-control" id="returnDay" name="returnDay">
+      </div>
+      <div class="col mb-3">
+        <label class="form-label" for="returnTime">Rent Time:</label>
+        <input type="time" class="form-control" id="returnTime" name="returnTime">
+      </div>
+
+      <div class="col mb-2">
+        <label class="form-label" for="city">Car:</label>
+        <select name="city" class="form-control" id="city">
+          <option value="kaş">Mustang</option>
+          <option value="kemer">Mercedes</option>
+          <option value="konyaaltı">BMW</option>
+          <option value="manavgat">Honda</option>
+        </select>
+      </div>
+
+      <div class="col mb-2">
+      </div>
+      <div class="col mb-2 text-center">
+        <button class="btn btn-primary">Rent a Car</button>
+      </div>
+      <div class="col mb-2">
+      </div>
 
 
-            </form>
-        
-    </div>
+
+
+    </form>
+
+  </div>
 </div>
+<!-- renting bitiş-->
+<!-- tanıtım alanı başlangıç-->
+<div class="container marketing">
+
+  <!-- Three columns of text below the carousel -->
+  <div class="row">
+    <div class="col-lg-4">
+      <img src="/img/mercedes.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140" role="img"
+        aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
+      </img>
+
+      <h2>Mercedes</h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut placeat possimus, quis doloribus perspiciatis
+        voluptatem dolorem numquam aperiam culpa fuga libero deleniti nesciunt minus quia nostrum vero. Id, eius. Natus
+        nesciunt voluptatem minus, autem provident reprehenderit fugiat illum sit saepe repudiandae possimus, modi
+        maiores debitis quis! Animi architecto maxime ipsum?</p>
+      <p><a class="btn btn-secondary" href="#"> Rent Mercedes </a></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <img src="/img/bmw.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140" role="img"
+        aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
+      </img>
+      <h2>BMW</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati, corporis molestias facilis explicabo
+        aliquid animi magni similique recusandae? Debitis ipsa voluptatibus, explicabo corporis, deleniti amet a quos
+        quo provident soluta atque officia deserunt velit ratione delectus? Pariatur sint voluptatem non magnam aliquid,
+        incidunt facilis quidem rerum ipsum, delectus, voluptas enim.</p>
+      <p><a class="btn btn-secondary" href="#">Rent BMW</a></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <img src="/img/honda.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140" role="img"
+        aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
+      </img>
+
+      <h2>Honda</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa adipisci eos illum perspiciatis, rerum excepturi
+        numquam, quae molestiae, nihil voluptatem soluta dolor voluptas quas? Eum libero cumque quia commodi ducimus
+        laboriosam architecto quo accusantium odio quaerat corporis itaque ipsum magni quos modi, eligendi et similique
+        nobis natus, voluptate mollitia! Repudiandae!</p>
+      <p><a class="btn btn-secondary" href="#">Rent Hyundai</a></p>
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+
+
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">Clean Cars <span class="text-muted"> for your health </span></h2>
+      <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium placeat quisquam cum ea, rerum
+        nostrum exercitationem nobis porro ratione aspernatur voluptates a soluta voluptas harum distinctio nam
+        veritatis eius deserunt dignissimos cumque reiciendis suscipit. Qui repellendus laboriosam possimus doloremque
+        nemo.</p>
+    </div>
+    <div class="col-md-5">
+      <img src="/img/clean_cars.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"
+        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+        preserveAspectRatio="xMidYMid slice" focusable="false">    
+      </img>
+
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7 order-md-2">
+      <h2 class="featurette-heading">Fast Service <span class="text-muted"> for your time </span></h2>
+      <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, quo repellendus! Similique impedit
+        eos autem voluptatum quis fugiat id accusamus blanditiis quaerat voluptate enim deserunt cum quisquam maiores
+        iure a, magnam saepe, aliquam eveniet ab! Labore nihil nam dolor fugit.
+      </p>
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img src="/img/fast_service.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"
+        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+        preserveAspectRatio="xMidYMid slice" focusable="false">
+      </img>
+
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">Affordable Prices <span class="text-muted"> for your pocket </span></h2>
+      <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolores enim ut atque autem est
+        odio. Esse, autem ut corrupti voluptatum unde sed cumque ullam consequatur ab eum ipsum? Totam, minima. Neque
+        delectus accusantium, ipsum corrupti laborum dolorum id voluptate.</p>
+    </div>
+    <div class="col-md-5">
+      <img src="/img/easy_payment.jpg" 
+      class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"
+        role="img" aria-label="Placeholder: 500x500"
+        preserveAspectRatio="xMidYMid slice" focusable="false">
+    </img>
+
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+</div>
+<!-- Tanıtım alanı bitiş-->
 
 
 <!--footer-->
@@ -151,9 +274,8 @@ background-position: center center; background-attachment: fixed ">
 </div>
 <!--footer-->
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
-  </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
 
 </html>
