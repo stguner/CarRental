@@ -65,7 +65,7 @@
         <div class="carousel-caption text-start">
           <h1 class="text-light">MUSTANG</h1>
           <p class="text-light"> <b>MODEL 2022</b> </p>
-          <p><a class="btn btn-lg btn-dark" href="#">Rent Now</a></p>
+          <p><a class="btn btn-lg btn-dark" href="/html/checkout.html">Rent Now</a></p>
         </div>
       </div>
     </div>
@@ -80,7 +80,7 @@
         <div class="carousel-caption">
           <h1>BMW</h1>
           <p> <b> MODEL 2022</b></p>
-          <p><a class="btn btn-lg btn-dark" href="#">Rent Now</a></p>
+          <p><a class="btn btn-lg btn-dark" href="/html/checkout.html">Rent Now</a></p>
         </div>
       </div>
     </div>
@@ -96,7 +96,7 @@
         <div class="carousel-caption text-end">
           <h1 class="text-light">MERCEDES</h1>
           <p class="text-light"> <b> MODEL 2020</b></p>
-          <p><a class="btn btn-lg btn-dark" href="#">Rent Now</a></p>
+          <p><a class="btn btn-lg btn-dark" href="/html/checkout.html">Rent Now</a></p>
         </div>
       </div>
     </div>
@@ -111,18 +111,18 @@
         <div class="carousel-caption text-end">
           <h1 class="text-light">HONDA</h1>
           <p class="text-light"> <b>MODEL 2021</b> </p>
-          <p><a class="btn btn-lg btn-dark" href="#">Rent Now</a></p>
+          <p><a class="btn btn-lg btn-dark" href="/html/checkout.html">Rent Now</a></p>
         </div>
       </div>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">السابق</span>
+    <span class="visually-hidden">Previous</span>
   </button>
   <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">التالي</span>
+    <span class="visually-hidden">Next</span>
   </button>
 </div>
 <!-- Carousel bitiş-->
@@ -132,7 +132,7 @@
 <div class="container bg-secondary p-2 text-white mb-3">
   <div class="row">
 
-    <form class="form d-inline-flex row row-cols-3 mt-2">
+    <form class="form row row-cols-3 mt-2">
 
       <div class="col mb-2">
         <label class="form-label" for="rentDay">Rent Day:</label>
@@ -156,16 +156,16 @@
 
       <div class="col mb-3">
         <label class="form-label" for="returnDay">Return Day:</label>
-        <input type="date" class="form-control" id="returnDay" name="returnDay">
+        <input type="date" class="form-control" id="returnDay" name="returnDay" required>
       </div>
       <div class="col mb-3">
         <label class="form-label" for="returnTime">Rent Time:</label>
-        <input type="time" class="form-control" id="returnTime" name="returnTime">
+        <input type="time" class="form-control" id="returnTime" name="returnTime" required>
       </div>
 
       <div class="col mb-2">
         <label class="form-label" for="car">Car:</label>
-        <select name="car" class="form-control" id="car">
+        <select name="car" class="form-control" id="car" required>
           <option value="Mustang">Mustang</option>
           <option value="Mercedes">Mercedes</option>
           <option value="BMW">BMW</option>
@@ -176,13 +176,10 @@
       <div class="col mb-2">
       </div>
       <div class="col mb-2 text-center">
-        <button class="btn btn-primary">Rent a Car</button>
+        <button class="btn btn-primary" type="submit" href="/html/checkout.html"> Rent a Car</button>
       </div>
       <div class="col mb-2">
       </div>
-
-
-
 
     </form>
 
@@ -202,7 +199,7 @@
         voluptatem dolorem numquam aperiam culpa fuga libero deleniti nesciunt minus quia nostrum vero. Id, eius. Natus
         nesciunt voluptatem minus, autem provident reprehenderit fugiat illum sit saepe repudiandae possimus, modi
         maiores debitis quis! Animi architecto maxime ipsum?</p>
-      <p><a class="btn btn-secondary" href="#"> Rent Mercedes </a></p>
+      <p><a class="btn btn-secondary" href="/html/checkout.html"> Rent Mercedes </a></p>
     </div>
 
     <div class="col-lg-4">
@@ -214,7 +211,7 @@
         aliquid animi magni similique recusandae? Debitis ipsa voluptatibus, explicabo corporis, deleniti amet a quos
         quo provident soluta atque officia deserunt velit ratione delectus? Pariatur sint voluptatem non magnam aliquid,
         incidunt facilis quidem rerum ipsum, delectus, voluptas enim.</p>
-      <p><a class="btn btn-secondary" href="#">Rent BMW</a></p>
+      <p><a class="btn btn-secondary" href="/html/checkout.html">Rent BMW</a></p>
     </div>
     <div class="col-lg-4">
       <img src="/img/honda.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140" role="img"
@@ -226,7 +223,7 @@
         numquam, quae molestiae, nihil voluptatem soluta dolor voluptas quas? Eum libero cumque quia commodi ducimus
         laboriosam architecto quo accusantium odio quaerat corporis itaque ipsum magni quos modi, eligendi et similique
         nobis natus, voluptate mollitia! Repudiandae!</p>
-      <p><a class="btn btn-secondary" href="#">Rent Hyundai</a></p>
+      <p><a class="btn btn-secondary" href="/html/checkout.html">Rent Hyundai</a></p>
     </div>
   </div>
 
@@ -244,7 +241,7 @@
     </div>
     <div class="col-md-5">
       <img src="/img/clean_cars.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-        width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+        width="500" height="500" role="img" aria-label="Placeholder: 500x500"
         preserveAspectRatio="xMidYMid slice" focusable="false">
       </img>
 

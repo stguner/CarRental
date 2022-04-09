@@ -34,6 +34,15 @@
    background-color: rgb(236, 128, 6) !important;
 }
 
+.text-orange{
+    color: rgb(236, 128, 6) !important;
+}
+
+.btn-orange{
+    color: rgb(255, 255, 255);
+    background-color:rgb(236, 128, 6) !important; ;
+}
+
 .user_account .active{
     background-color: rgb(254, 242, 228) !important;
 }
