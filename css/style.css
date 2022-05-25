@@ -1,9 +1,9 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
 }
 
-.logo{
+.logo {
     width: 100px !important;
     height: 100px !important;
 }
@@ -14,12 +14,14 @@
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
 .divider-text span {
     padding: 7px;
     font-size: 12px;
-    position: relative;   
+    position: relative;
     z-index: 2;
 }
+
 .divider-text:after {
     content: "";
     position: absolute;
@@ -30,19 +32,42 @@
     z-index: 1;
 }
 
-.background-orange{
-   background-color: rgb(236, 128, 6) !important;
+.background-orange {
+    background-color: rgb(236, 128, 6) !important;
 }
 
-.text-orange{
+.text-orange {
     color: rgb(236, 128, 6) !important;
 }
 
-.btn-orange{
+.btn-orange {
     color: rgb(255, 255, 255);
-    background-color:rgb(236, 128, 6) !important; ;
+    background-color: rgb(236, 128, 6) !important;
+    ;
 }
 
-.user_account .active{
+.user_account .active {
     background-color: rgb(254, 242, 228) !important;
 }
+
+.errorWrap {
+    padding: 10px;
+    margin: 0 0 20px 0;
+    background: #fff;
+    border-left: 4px solid #dd3d36;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+}
+
+.succWrap {
+    padding: 10px;
+    margin: 0 0 20px 0;
+    background: #fff;
+    border-left: 4px solid #5cb85c;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+}
+
+
+
+
