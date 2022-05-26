@@ -56,7 +56,7 @@ background-position: center center; background-attachment: fixed; ; height: 100v
                   <input type="password" class="form-control" placeholder="Enter password" name="kullanici_password" required>
                 </div>
                 <button class="btn btn-outline-light btn-lg px-5" type="submit" name="login">Login</button>
-                <p class="medium mb-0 mt-2 pb-lg-2"><a class="text-white-50" href="forgot_password.php?durum=ok">Forgot password?</a></p>
+                <p class="medium mb-0 mt-2 pb-lg-2"><a class="text-white-50" href="forgot_password.php?durum=ok&kullanicisil=none&deleteMessage=none">Forgot password?</a></p>
               </form>
               </div>
                 <hr>

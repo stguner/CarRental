@@ -64,7 +64,7 @@ $kullanicicek=$kullanicisor->fetch(PDO::FETCH_ASSOC)
               <?php }?>
           <hr>
           <div class="mb-md-5 mt-md-4 pb-5">
-            <form action="islem.php" method="POST">
+            <form action="islem_userChangePassword.php" method="POST">
               <div class="input-group mb-3">
                 <span class="input-group-text">E-mail</span>
                 <input type="email" class="form-control" placeholder="Enter e-mail" aria-label="Username"  value="<?php echo $kullanicicek['email'] ?>"disabled>

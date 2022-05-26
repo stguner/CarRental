@@ -69,14 +69,13 @@ $kullanicisor->execute();
                               white-space:nowrap; ">
                       <?php echo $kullanicicek['ContactNumber'] ?>
                     </td>
-                    <td style="overflow:hidden;
-                              white-space:nowrap; ">
+                    <td>
                       <?php echo $kullanicicek['Message'] ?>
                     </td>
                     <td>
                       <center><a
                           href="islem.php?kullanici_id=<?php echo $kullanicicek['id']; ?>&deleteMessage=ok"><button
-                            class="btn btn-danger btn-xs">Sil</button></a></center>
+                            class="btn btn-danger btn-xs">Delete</button></a></center>
                     </td>
                   </tr>
 

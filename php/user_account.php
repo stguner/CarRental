@@ -47,7 +47,12 @@ $kullanicicek=$kullanicisor->fetch(PDO::FETCH_ASSOC)
                     <?php }?>
           <?php /*Başarılı kayıt */ if ($_GET['durum']=="bilgi_duzenlenemedi") {?>
                     <div class="alert alert-danger">
-                      <strong>Your information could not be changed.</strong> Please contact us from the 'Contact Us' page. 
+                      <strong>ERROR! Your information could not be changed.</strong> Please contact us from the 'Contact Us' page. 
+                    </div>
+                    <?php }?>
+                    <?php /*Başarılı kayıt */ if ($_GET['durum']=="gecersiz_phoneNumber") {?>
+                    <div class="alert alert-danger">
+                      <strong>ERROR!</strong> Please enter invalid phone number. (ex: 5542071777)
                     </div>
                     <?php }?>
           <hr>

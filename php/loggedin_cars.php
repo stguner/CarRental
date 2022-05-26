@@ -10,7 +10,7 @@ include 'loggedin_navbar.php' ;
         eos autem voluptatum quis fugiat id accusamus blanditiis quaerat voluptate enim deserunt cum quisquam maiores
         iure a, magnam saepe, aliquam eveniet ab! Labore nihil nam dolor fugit.
       </p>
-      <p><a class="btn btn-primary" href="../php/checkout.php?durum=ok"> Rent Mercedes </a></p>
+      <p><a class="btn btn-primary" href="../php/checkout.php?durum=ok&selectedCar=MERCEDES"> Rent Mercedes </a></p>
     </div>
     <div class="col-md-5 order-md-1 mt-3">
       <img src="../img/mercedes.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
@@ -28,7 +28,7 @@ include 'loggedin_navbar.php' ;
         eos autem voluptatum quis fugiat id accusamus blanditiis quaerat voluptate enim deserunt cum quisquam maiores
         iure a, magnam saepe, aliquam eveniet ab! Labore nihil nam dolor fugit.
       </p>
-      <p><a class="btn btn-primary" href="../php/checkout.php?durum=ok"> Rent BMW </a></p>
+      <p><a class="btn btn-primary" href="../php/checkout.php?durum=ok&selectedCar=BMW"> Rent BMW </a></p>
     </div>
     <div class="col-md-5 order-md-1 mt-3">
       <img src="../img/bmw.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
@@ -47,7 +47,7 @@ include 'loggedin_navbar.php' ;
         eos autem voluptatum quis fugiat id accusamus blanditiis quaerat voluptate enim deserunt cum quisquam maiores
         iure a, magnam saepe, aliquam eveniet ab! Labore nihil nam dolor fugit.
       </p>
-      <p><a class="btn btn-primary" href="../php/checkout.php?durum=ok"> Rent Mustang </a></p>
+      <p><a class="btn btn-primary" href="../php/checkout.php?durum=ok&selectedCar=MUSTANG"> Rent Mustang </a></p>
     </div>
     <div class="col-md-5 order-md-1 mt-3">
       <img src="../img/fast_car_mustang.jpg"
@@ -66,7 +66,7 @@ include 'loggedin_navbar.php' ;
         eos autem voluptatum quis fugiat id accusamus blanditiis quaerat voluptate enim deserunt cum quisquam maiores
         iure a, magnam saepe, aliquam eveniet ab! Labore nihil nam dolor fugit.
       </p>
-      <p><a class="btn btn-primary" href="../php/checkout.php?durum=ok"> Rent Honda </a></p>
+      <p><a class="btn btn-primary" href="../php/checkout.php?durum=ok&selectedCar=HONDA"> Rent Honda </a></p>
     </div>
     <div class="col-md-5 order-md-1 mt-3">
       <img src="../img/honda.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"

@@ -1,13 +1,13 @@
 <?php 
 include 'connection.php';
-ob_start();
-session_start();
+include 'function.php';
+
 
 //Giriş Yapma
 if (isset($_POST['login'])) {
 	
-	$kullanici_email=htmlspecialchars($_POST['kullanici_email']); 
-	$kullanici_password=htmlspecialchars($_POST['kullanici_password']);
+	$kullanici_email=$_POST['kullanici_email']; 
+	$kullanici_password=$_POST['kullanici_password'];
 
 	$kullanicisor=$conn->prepare("select * from customers where email=:email and yetki=:yetki and password=:password");
 	$kullanicisor->execute(array(
@@ -39,7 +39,7 @@ if (isset($_POST['login'])) {
                         'email' => $kullanici_email
                         ));
                     }
-        header("Location:loggedin_index.php?durum=ok");
+        header("Location:loggedin_index.php?durum=ok&kullanicisil=none&deleteMessage=none");
         exit;
     }else{
         if($say2==1){
@@ -52,10 +52,10 @@ if (isset($_POST['login'])) {
                             'email' => $kullanici_email
                             ));
                         }
-            header("Location:admin_index.php?durum=ok");
+            header("Location:admin_index.php?durum=ok&kullanicisil=none&deleteMessage=none");
             exit;
         }else{
-            header("Location:login_register.php?durum=no_password");
+            header("Location:login_register.php?durum=no_password&kullanicisil=none&deleteMessage=none");
             exit;
         }
     }
@@ -63,10 +63,10 @@ if (isset($_POST['login'])) {
 
 //Contact Us - not loggedin
 if (isset($_POST['contact'])) {
-    $kullanici_adi= htmlspecialchars($_POST['kullanici_adi']);
-    $kullanici_email= htmlspecialchars($_POST['kullanici_email']);
-    $kullanici_mesaj= htmlspecialchars($_POST['kullanici_mesaj']);
-    $kullanici_phoneNumber= htmlspecialchars($_POST['kullanici_phoneNumber']);
+    $kullanici_adi= $_POST['kullanici_adi'];
+    $kullanici_email= $_POST['kullanici_email'];
+    $kullanici_mesaj= $_POST['kullanici_mesaj'];
+    $kullanici_phoneNumber= $_POST['kullanici_phoneNumber'];
 
     $contact=$conn->prepare("INSERT INTO contactus SET
                     name=:kullanici_adi,
@@ -83,19 +83,19 @@ if (isset($_POST['contact'])) {
                     'isMember' => 'No'
         ));
         if($push){
-            header("Location:contactus.php?durum=basarili_contact");
+            header("Location:contactus.php?durum=basarili_contact&kullanicisil=none&deleteMessage=none");
         }else{
-            header("Location:contactus.php?durum=basarisiz_contact");
+            header("Location:contactus.php?durum=basarisiz_contact&kullanicisil=none&deleteMessage=none");
         }
                     
 }
 
 //Contact Us-loggedin
 if (isset($_POST['contact_loggedin'])) {
-    $kullanici_adi= htmlspecialchars($_POST['kullanici_adi']);
-    $kullanici_email= htmlspecialchars($_POST['kullanici_email']);
-    $kullanici_mesaj= htmlspecialchars($_POST['kullanici_mesaj']);
-    $kullanici_phoneNumber= htmlspecialchars($_POST['kullanici_phoneNumber']);
+    $kullanici_adi= $_POST['kullanici_adi'];
+    $kullanici_email= $_POST['kullanici_email'];
+    $kullanici_mesaj= $_POST['kullanici_mesaj'];
+    $kullanici_phoneNumber= $_POST['kullanici_phoneNumber'];
 
     $contact=$conn->prepare("INSERT INTO contactus SET
                     name=:kullanici_adi,
@@ -112,21 +112,21 @@ if (isset($_POST['contact_loggedin'])) {
                     'isMember' => 'Yes'
         ));
         if($push){
-            header("Location:loggedin_contactus.php?durum=basarili_contact_loggedin");
+            header("Location:loggedin_contactus.php?durum=basarili_contact_loggedin&kullanicisil=none&deleteMessage=none");
         }else{
-            header("Location:loggedin_contactus.php?durum=basarisiz_contact_loggedin");
+            header("Location:loggedin_contactus.php?durum=basarisiz_contact_loggedin&kullanicisil=none&deleteMessage=none");
         }
                     
 }
 
 //Kayıt olma 
 if(isset($_POST['signup'])){
-    $kullanici_email= htmlspecialchars($_POST['email']);
-    $kullanici_phoneNumber=htmlspecialchars ($_POST['phoneNumber']);
-    $kullanici_password=htmlspecialchars($_POST['password']);
-    $kullanici_confirmPassword=htmlspecialchars ($_POST['confirmPassword']);
-    $kullanici_firstname=htmlspecialchars ($_POST['firstname']);
-    $kullanici_surname=htmlspecialchars( $_POST['surname']);
+    $kullanici_email= $_POST['email'];
+    $kullanici_phoneNumber= $_POST['phoneNumber'];
+    $kullanici_password=$_POST['password'];
+    $kullanici_confirmPassword=$_POST['confirmPassword'];
+    $kullanici_firstname= $_POST['firstname'];
+    $kullanici_surname= $_POST['surname'];
 
 
     if($kullanici_password == $kullanici_confirmPassword){
@@ -182,6 +182,7 @@ if(isset($_POST['signup'])){
 
 //Admin- Kullanici düzenle
 if (isset($_POST['kullaniciduzenle'])) {
+    islemKontrol();
 
 	$kullanici_id=$_POST['kullanici_id'];
 
@@ -215,7 +216,7 @@ if (isset($_POST['kullaniciduzenle'])) {
 
 //Admin- Kullanıcı Sil
 if ($_GET['kullanicisil']=="ok") {
-
+    islemKontrol();
 	$delete=$conn->prepare("DELETE from customers where id=:id");
 	$control=$delete->execute(array(
 		'id' => $_GET['kullanici_id']
@@ -240,7 +241,7 @@ if ($_GET['kullanicisil']=="ok") {
 
 //Admin- Mesaj Silme
 if ($_GET['deleteMessage']=="ok") {
-
+    islemKontrol();
 	$delete=$conn->prepare("DELETE from contactus where id=:id");
 	$control=$delete->execute(array(
 		'id' => $_GET['kullanici_id']
@@ -260,47 +261,48 @@ if (isset($_POST['bilgi_duzenleme'])) {
 	$ayarkaydet=$conn->prepare("UPDATE customers SET
 		phoneNumber=:phoneNumber,
         firstname=:firstname,
-        surname=:surname,
-        email=:email
+        surname=:surname
 		WHERE id=:id");
 
+    if(strlen($_POST['phoneNumber']) == 10){
 	$update=$ayarkaydet->execute(array(
 		'firstname' => $_POST['firstname'],
 		'surname' => $_POST['surname'],
-		'email' => $_POST['email'],
         'phoneNumber' => $_POST['phoneNumber'],
         'id' => $kullanici_id
 		));
 
 
-	if ($update) {
-		Header("Location:user_account.php?durum=bilgi_duzenlendi");
+	    if ($update) {
+		    Header("Location:user_account.php?durum=bilgi_duzenlendi");
 
-	} else {
+	    } else {
 
-		Header("Location:user_account.php?durum=bilgi_duzenlenemedi");
-	}
+		    Header("Location:user_account.php?durum=bilgi_duzenlenemedi");
+	    }
 
+    }else{
+        Header("Location:user_account.php?durum=gecersiz_phoneNumber");
+    }
 }
 
-
 //UserAccount- Şifre Değiştirme
+
 if (isset($_POST['sifre_degistirme'])) {
     $kullanici_password=$_POST['password1'];
     $kullanici_confirmPassword=$_POST['password2'];
-    $kullanici_id=$_SESSION['kullanici_id'];
 
-    if(strlen($kullanici_password) & strlen($kullanici_confirmPassword) >= 6){
+    if(strlen($kullanici_password) >= 6){
 
     
         if($kullanici_password==$kullanici_confirmPassword){
             $ayarkaydet=$conn->prepare("UPDATE customers SET
-		    password=:password,
+		    password=:password
 		    WHERE id=:id");
 
 	        $update=$ayarkaydet->execute(array(
 		    'password' => $_POST['password1'],
-            'id' => $kullanici_id
+            'id' => $_SESSION['kullanici_id']
 		    ));
 	        if($update){
 		    Header("Location:user_change_password.php?durum=sifre_degisti");
@@ -317,18 +319,19 @@ if (isset($_POST['sifre_degistirme'])) {
 }
 
 
+
 //Not Loggedin- Şifre Değiştirme
 if (isset($_POST['not_loggedin_change_password'])) {
     $kullanici_password=$_POST['password1'];
     $kullanici_confirmPassword=$_POST['password2'];
     $kullanici_email=$_POST['email'];
 
-    if(strlen($kullanici_password) & strlen($kullanici_confirmPassword) >= 6){
+    if(strlen($kullanici_password) >= 6){
 
     
         if($kullanici_password==$kullanici_confirmPassword){
             $ayarkaydet=$conn->prepare("UPDATE customers SET
-		    password=:password,
+		    password=:password
 		    WHERE email=:email");
 
 	        $update=$ayarkaydet->execute(array(
@@ -336,20 +339,18 @@ if (isset($_POST['not_loggedin_change_password'])) {
             'email' => $kullanici_email
 		    ));
 	        if($update){
-		    Header("Location:forgot_password.php?durum=sifre_degisti");
+		    Header("Location:forgot_password.php?durum=sifre_degisti&kullanicisil=none&deleteMessage=none");
 	        }else {
-		    Header("Location:forgot_password.php?durum=sifre_degistirilemedi");
+		    Header("Location:forgot_password.php?durum=sifre_degistirilemedi&kullanicisil=none&deleteMessage=none");
 	        }
         }else{
-        header("Location:forgot_password.php?durum=farklisifre");
+        header("Location:forgot_password.php?durum=farklisifre&kullanicisil=none&deleteMessage=none");
         }
     }else{
-    header("Location:forgot_password.php?durum=eksiksifre");
+    header("Location:forgot_password.php?durum=eksiksifre&kullanicisil=none&deleteMessage=none");
     }
 
 }
-
-
 
 
 

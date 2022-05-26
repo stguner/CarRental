@@ -4,7 +4,6 @@ include 'loggedin_navbar.php';
 	$rezervasyonsor->execute(array(
 		'customerid' => $_SESSION['kullanici_id']
 		));
-    $rezervasyoncek=$rezervasyonsor->fetch(PDO::FETCH_ASSOC);
 ?>
     <?php /*Başarılı kayıt */ if ($_GET['rezervasyon_sil']=="no") {?>
       <div class="alert alert-danger text-center">
@@ -99,7 +98,7 @@ include 'loggedin_navbar.php';
                     </td>
                     <td>
                       <center><a
-                          href="islem_reservation.php?reservationid=<?php echo $rezervasyoncek['reservationid']; ?>&carid=<?php echo $rezervasyoncek['carid'] ?>&rezervasyon_sil=ok"><button
+                          href="islem_reservation.php?reservationid=<?php echo $rezervasyoncek['reservationid']; ?>&price=<?php echo $rezervasyoncek['price']; ?>&carid=<?php echo $rezervasyoncek['carid'] ?>&rezervasyon_sil=ok"><button
                             class="btn btn-danger btn-xs">End Reservation</button></a></center>
                     </td>
                   </tr>

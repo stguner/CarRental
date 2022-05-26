@@ -1,11 +1,13 @@
 <?php 
 include 'connection.php';
+include 'function.php';
 ob_start();
 session_start();
 
 
 //UserAccount - Reservation
 if(isset($_POST['continue_renting'])){
+    islemKontrol();
     $t=time();
     $currentTime = (date("Y-m-d",$t));
     $_SESSION['startDate'] = $_POST['startDate'];
@@ -39,6 +41,7 @@ if(isset($_POST['continue_renting'])){
 
 //UserAccount - Rezervasyon tamamlama
 if(isset($_POST['make_reservation'])){
+    islemKontrol();
     $_SESSION['carid'] = $_POST['carid'];
     $_SESSION['carName'] = $_POST['carName'];
     $startDate = $_SESSION['startDate'];
@@ -48,7 +51,7 @@ if(isset($_POST['make_reservation'])){
 if($_SESSION['stock'] <= 0){
     header("Location:checkout.php?durum=outOfStock");
 }else{
-    $makeReservation=$conn->prepare("INSERT INTO reservations SET
+            $makeReservation=$conn->prepare("INSERT INTO reservations SET
                     startDate=:startDate,
                     returnDate=:returnDate,
                     customerid=:customerid,
@@ -65,6 +68,12 @@ if($_SESSION['stock'] <= 0){
                     'price' => $_SESSION['price'],
                     'carName' => $_SESSION['carName'],
                     'situation' => 'active'
+        ));
+        $total_income=$conn->prepare("UPDATE income SET
+                    total_income=total_income+:price WHERE indicator=0
+                    ");
+            $total_income_push=$total_income->execute(array(
+                    'price' => $_SESSION['price']
         ));
         if($push){
             header("Location:loggedin_index.php?durum=rezervasyon_islem_tamamlandi");
@@ -83,6 +92,7 @@ if($_SESSION['stock'] <= 0){
 
 //UserAccount- Rezervasyon Sil
 if ($_GET['rezervasyon_sil']=="ok") {
+    islemKontrol();
 	$delete=$conn->prepare("DELETE from reservations where reservationid=:id");
 	$control=$delete->execute(array(
 		'id' => $_GET['reservationid']
@@ -93,6 +103,12 @@ if ($_GET['rezervasyon_sil']=="ok") {
                     ");
                     $increase=$increaseStock->execute(array(
                     'carid' => $_GET['carid']
+        ));
+        $total_income=$conn->prepare("UPDATE income SET
+                    total_income=total_income-:price WHERE indicator=0
+                    ");
+            $total_income_push=$total_income->execute(array(
+                    'price' => $_GET['price']
         ));
 		header("location:user_reservations.php?rezervasyon_sil=ok");
 	} else {

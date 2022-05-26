@@ -1,6 +1,11 @@
 <?php
 include 'navbar.php' ;
 ?>
+<?php /*Başarılı kayıt */ if ($_GET['durum']=="izinsizislem") {?>
+      <div class="alert alert-success text-center">
+        <strong>CAREFULL!</strong> You tried to do something you don't have permission to do...
+        </div>
+    <?php }?>
 <!-- Carousel başlangıç-->
 <div id="myCarousel" class="carousel slide bg-secondary" data-bs-ride="carousel">
   <div class="carousel-indicators">

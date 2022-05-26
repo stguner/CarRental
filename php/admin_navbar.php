@@ -65,7 +65,7 @@ $kullanicisor=$conn->prepare("select * from customers where email=:email");
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../php/admin_messages.php?deleteMessage=waiting">
+              <a class="nav-link" href="../php/admin_messages.php?deleteMessage=waiting&message=waiting">
                 <img src="../img/messages.png" style="height: 30px;">
                 Messages
               </a>
@@ -78,8 +78,7 @@ $kullanicisor=$conn->prepare("select * from customers where email=:email");
               <strong class="">| <?php echo $kullanicicek['firstname']; ?></strong>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark text-small" aria-labelledby="dropdownUser1">
-              <li><a class="dropdown-item" href="#">Settings</a></li>
-              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="admin_profile.php?addStock=none">Profile</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>

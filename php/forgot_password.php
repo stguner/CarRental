@@ -1,6 +1,6 @@
 <?php 
 include 'navbar.php';
-include 'islem2.php';
+include 'islem.php';
 ?>
 
 <section class="vh-100 gradient-custom" style="background-image: linear-gradient(rgba(0,0,0, .2),rgba(0,0,0, .9)), url(../img/mercedes_bg.jpg); background-size: cover; 
@@ -51,7 +51,7 @@ background-position: center center; background-attachment: fixed; ; height: 100v
                                 <p class="text-white-50">Please enter your e-mail and enter your new password!</p>
                                 <hr>
 
-                                <form method="POST" action="islem2.php">
+                                <form method="POST" action="islem.php">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">E-mail</span>
                                     <input type="email" name="kullanici_email" class="form-control" placeholder="Enter e-mail"

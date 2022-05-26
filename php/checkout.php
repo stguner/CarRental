@@ -118,10 +118,43 @@ $kullanicicek=$kullanicisor->fetch(PDO::FETCH_ASSOC)
               <div class="row">
                 <div class="col-6 text-orange text-uppercase">Select Car: </div>
                 <select id="heard" class="form-control" name="car" required>
+                
+                <?php 
+                if ($_GET['selectedCar']=='MERCEDES') {?>
                 <option value="MERCEDES">MERCEDES</option>
                 <option value="BMW">BMW</option>
                 <option value="MUSTANG">MUSTANG</option>
                 <option value="HONDA">HONDA</option>
+                <?php }?>
+
+                <?php 
+                if ($_GET['selectedCar']=='HONDA') {?>
+                <option value="HONDA">HONDA</option>
+                <option value="MERCEDES">MERCEDES</option>
+                <option value="BMW">BMW</option>
+                <option value="MUSTANG">MUSTANG</option>
+                <?php }?>
+
+                <?php 
+                if ($_GET['selectedCar']=='MUSTANG') {?>
+                <option value="MUSTANG">MUSTANG</option>
+                <option value="MERCEDES">MERCEDES</option>
+                <option value="BMW">BMW</option>
+                <option value="HONDA">HONDA</option>
+                <?php }?>
+
+                <?php 
+                if ($_GET['selectedCar']=='BMW') {?>
+                <option value="BMW">BMW</option>
+                <option value="MERCEDES">MERCEDES</option>
+                <option value="MUSTANG">MUSTANG</option>
+                <option value="HONDA">HONDA</option>
+                <?php }?>
+
+          
+
+
+
                 <hr>
               </div>
               <input type="submit" name="continue_renting" class="btn btn-orange w-100 mt-3" value="Continue">

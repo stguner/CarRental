@@ -33,7 +33,7 @@ include 'loggedin_navbar.php' ;
         <div class="carousel-caption text-start">
           <h1 class="text-light">MUSTANG</h1>
           <p class="text-light"> <b>MODEL 2022</b> </p>
-          <p><a class="btn btn-lg btn-dark" href="../php/checkout.php">Rent Now</a></p>
+          <p><a class="btn btn-lg btn-dark" href="../php/checkout.php?durum=ok">Rent Now</a></p>
         </div>
       </div>
     </div>
@@ -48,7 +48,7 @@ include 'loggedin_navbar.php' ;
         <div class="carousel-caption">
           <h1>BMW</h1>
           <p> <b> MODEL 2022</b></p>
-          <p><a class="btn btn-lg btn-dark" href="../php/checkout.php">Rent Now</a></p>
+          <p><a class="btn btn-lg btn-dark" href="../php/checkout.php?durum=ok">Rent Now</a></p>
         </div>
       </div>
     </div>
@@ -64,7 +64,7 @@ include 'loggedin_navbar.php' ;
         <div class="carousel-caption text-end">
           <h1 class="text-light">MERCEDES</h1>
           <p class="text-light"> <b> MODEL 2020</b></p>
-          <p><a class="btn btn-lg btn-dark" href="../php/checkout.php">Rent Now</a></p>
+          <p><a class="btn btn-lg btn-dark" href="../php/checkout.php?durum=ok">Rent Now</a></p>
         </div>
       </div>
     </div>
@@ -79,7 +79,7 @@ include 'loggedin_navbar.php' ;
         <div class="carousel-caption text-end">
           <h1 class="text-light">HONDA</h1>
           <p class="text-light"> <b>MODEL 2021</b> </p>
-          <p><a class="btn btn-lg btn-dark" href="../php/checkout.php">Rent Now</a></p>
+          <p><a class="btn btn-lg btn-dark" href="../php/checkout.php?durum=ok">Rent Now</a></p>
         </div>
       </div>
     </div>

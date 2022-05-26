@@ -2,7 +2,6 @@
 include 'admin_navbar.php';
 $rezervasyonsor=$conn->prepare("select * from reservations");
 	$rezervasyonsor->execute();
-    $rezervasyoncek=$rezervasyonsor->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
@@ -50,6 +49,7 @@ $rezervasyonsor=$conn->prepare("select * from reservations");
         <?php 
 
                 while($rezervasyoncek=$rezervasyonsor->fetch(PDO::FETCH_ASSOC)) {?>
+                
         <tr>
           <td>
             <?php echo $rezervasyoncek['startDate'] ?>
@@ -61,7 +61,7 @@ $rezervasyonsor=$conn->prepare("select * from reservations");
             <?php echo $rezervasyoncek['carName'] ?>
           </td>
           <td>
-            <?php echo $rezervasyoncek['price'] ?>
+            $<?php echo $rezervasyoncek['price'] ?>
           </td>
           <td>
             <?php echo $rezervasyoncek['situation'] ?>
@@ -71,12 +71,12 @@ $rezervasyonsor=$conn->prepare("select * from reservations");
                   class="btn btn-primary btn-xs">Edit</button></a></center>
           </td>
           <td>
-            <center><a href="islem_admin_reservations.php?reservationid=<?php echo $rezervasyoncek['reservationid']; ?>
-                          &carid=<?php echo $rezervasyoncek['carid'] ?>&addStock=deleteReservation"><button
+            <center><a href="islem_admin_reservations.php?reservationid=<?php echo $rezervasyoncek['reservationid']; ?>&carid=<?php echo $rezervasyoncek['carid'] ?>&addStock=deleteReservation"><button
                   class="btn btn-danger btn-xs">End Reservation</button></a></center>
           </td>
         </tr>
         <?php } ?>
+        
 
       </tbody>
 
