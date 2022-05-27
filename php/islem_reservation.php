@@ -7,6 +7,22 @@ session_start();
 
 //UserAccount - Reservation
 if(isset($_POST['continue_renting'])){
+
+    $mustangPriceSor=$conn->prepare("SELECT price FROM cars where name='MUSTANG'");
+$mustangPriceSor->execute();
+$mustangPriceCek=$mustangPriceSor->fetch(PDO::FETCH_ASSOC);
+
+$bmwPriceSor=$conn->prepare("SELECT price FROM cars where name='BMW'");
+$bmwPriceSor->execute();
+$bmwPriceCek=$bmwPriceSor->fetch(PDO::FETCH_ASSOC);
+
+$mercedesPriceSor=$conn->prepare("SELECT price FROM cars where name='MERCEDES'");
+$mercedesPriceSor->execute();
+$mercedesPriceCek=$mercedesPriceSor->fetch(PDO::FETCH_ASSOC);
+
+$hondaPriceSor=$conn->prepare("SELECT price FROM cars where name='HONDA'");
+$hondaPriceSor->execute();
+$hondaPriceCek=$hondaPriceSor->fetch(PDO::FETCH_ASSOC);
     $t=time();
     $currentTime = (date("Y-m-d",$t));
     $_SESSION['startDate'] = $_POST['startDate'];
@@ -18,16 +34,16 @@ if(isset($_POST['continue_renting'])){
         if($_SESSION['startDate'] < $_SESSION['endDate']){
             $time_interval = round($datediff / (60 * 60 * 24));
             if($_SESSION['selectedCar']=='MERCEDES'){
-               $_SESSION['price']= ($time_interval+1)*150;
+               $_SESSION['price']= ($time_interval)*$mercedesPriceCek['price'];
             } 
             if($_SESSION['selectedCar']=='BMW'){
-                $_SESSION['price']= ($time_interval+1)*100;
+                $_SESSION['price']= ($time_interval)*$bmwPriceCek['price'];
              }
              if($_SESSION['selectedCar']=='HONDA'){
-               $_SESSION['price']= ($time_interval+1)*50;
+               $_SESSION['price']= ($time_interval)*$hondaPriceCek['price'];
             }
             if($_SESSION['selectedCar']=='MUSTANG'){
-                $_SESSION['price']= ($time_interval+1)*200;
+                $_SESSION['price']= ($time_interval)*$mustangPriceCek['price'];
              }
             header("Location:loggedin_reservation.php?durum=ok&rezervasyon_sil=waiting");
         }else{

@@ -324,17 +324,17 @@ if (isset($_POST['sifre_degistirme'])) {
 if (isset($_POST['not_loggedin_change_password'])) {
     $kullanici_password=$_POST['password1'];
     $kullanici_confirmPassword=$_POST['password2'];
-    $kullanici_email=$_POST['email'];
+    $kullanici_email=$_POST['kullanici_email'];
 
     if(strlen($kullanici_password) >= 6){
 
     
         if($kullanici_password==$kullanici_confirmPassword){
-            $ayarkaydet=$conn->prepare("UPDATE customers SET
+            $updatePassword=$conn->prepare("UPDATE customers SET
 		    password=:password
 		    WHERE email=:email");
 
-	        $update=$ayarkaydet->execute(array(
+	        $update=$updatePassword->execute(array(
 		    'password' => $kullanici_password,
             'email' => $kullanici_email
 		    ));

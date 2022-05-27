@@ -48,6 +48,9 @@ $kullanicisor=$conn->prepare("select * from customers where email=:email");
           <a class="nav-link fs-5" href="../php/loggedin_contactus.php?durum=ok"> <img src="../img/phone.png" height="25px"> Contact
             Us</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link fs-5" href="../php/user_reservations.php?durum=ok&rezervasyon_sil=waiting"> <img src="../img/reservation.png" height="25px"> Reservations</a>
+        </li>
         <div class="dropdown sticky-bottom d-flex justify-content-center">
           <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser1"
             data-bs-toggle="dropdown">
