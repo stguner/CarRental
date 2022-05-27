@@ -68,7 +68,7 @@ include 'loggedin_navbar.php';
                 <tbody>
 
                   <?php 
-
+                  //Tabloyu yansıtma
                 while($rezervasyoncek=$rezervasyonsor->fetch(PDO::FETCH_ASSOC)) {?>
                   <tr>
                     <td style="overflow:hidden;
@@ -85,22 +85,59 @@ include 'loggedin_navbar.php';
                     </td>
                     <td style="overflow:hidden;
                               white-space:nowrap; ">
-                      <?php echo $rezervasyoncek['price'] ?>
+                      $<?php echo $rezervasyoncek['price'] ?>
                     </td>
                     <td style="overflow:hidden;
                               white-space:nowrap; ">
-                      <?php echo $rezervasyoncek['situation'] ?>
+                      <?php if($rezervasyoncek['situation']=='active'){
+                        $t=time();
+                        $currentTime = (date("Y-m-d",$t));
+                        if($rezervasyoncek['returnDate']<$currentTime){
+                          $changeSituation=$conn->prepare("UPDATE reservations SET
+                              situation=:situation
+                              WHERE reservationid=:reservationid
+                              ");
+                          $push=$changeSituation->execute(array(
+                              'reservationid' => $rezervasyoncek['reservationid'],
+                              'situation' => 'ended'
+                        ));
+                        }else{
+                          echo $rezervasyoncek['situation'];
+                        }
+                      }
+                      ?>
+                      <?php if($rezervasyoncek['situation']=='ended'){
+                        echo $rezervasyoncek['situation'];}
+                        ?>
                     
-                    <td>
+                    <?php if($rezervasyoncek['situation']=='active') { ?> 
+                      <td>
+                        <!-- Rezervasyon Editleme -->
                       <center><a
-                          href="islem_reservation.php?reservationid=<?php echo $rezervasyoncek['reservationid']; ?>"><button
+                          href="#"><button
                             class="btn btn-primary btn-xs">Edit</button></a></center>
                     </td>
                     <td>
+                      <!-- Rezervasyon Silme -->
                       <center><a
                           href="islem_reservation.php?reservationid=<?php echo $rezervasyoncek['reservationid']; ?>&price=<?php echo $rezervasyoncek['price']; ?>&carid=<?php echo $rezervasyoncek['carid'] ?>&rezervasyon_sil=ok"><button
-                            class="btn btn-danger btn-xs">End Reservation</button></a></center>
+                            class="btn btn-danger btn-xs">Cancel</button></a></center>
                     </td>
+                    <?php }else{ ?>
+                      <td>
+                        <!-- Rezervasyon Puanlama -->
+                      <center><a
+                          href="#"><button
+                            class="btn btn-info btn-xs">Make Review</button></a></center>
+                    </td>
+                    <td>
+                      <!-- Tamamlanmış Rezervasyon Silme -->
+                      <center><a
+                          href="islem_reservation.php?reservationid=<?php echo $rezervasyoncek['reservationid']; ?>&price=<?php echo $rezervasyoncek['price']; ?>&carid=<?php echo $rezervasyoncek['carid'] ?>&rezervasyon_sil=ok"><button
+                            class="btn btn-danger btn-xs">Delete</button></a></center>
+                    </td>
+                   <?php }?>
+                   
                   </tr>
                   <?php } ?>
 

@@ -1,6 +1,31 @@
 <?php
 include 'loggedin_navbar.php' ;
 ?>
+<?php /*Başarılı kayıt */ if ($_GET['durum']=="outOfStock") {?>
+      <div class="alert alert-danger text-center">
+        <strong >The car which is you selected is out of stock.</strong> Please choose another car.
+        </div>
+    <?php }?>
+    <?php /*Başarılı kayıt */ if ($_GET['durum']=="false_rentDate") {?>
+  <div class="alert alert-danger text-center">
+    <strong>Invalid time intervals.</strong>Please fill the form carefully.
+  </div>
+<?php }?>
+<?php /*Başarılı kayıt */ if ($_GET['durum']=="past_rentDate") {?>
+  <div class="alert alert-danger text-center">
+    <strong>You cannot make a reservation on a past date.</strong>Please fill the form carefully.
+  </div>
+<?php }?>
+<?php /*Başarılı kayıt */ if ($_GET['durum']=="so_far") {?>
+  <div class="alert alert-danger text-center">
+    <strong>You cannot make a reservation on selected dates.</strong>Try to make reservation for a closer time.
+  </div>
+<?php }?>
+<?php /*Başarılı kayıt */ if ($_GET['durum']=="so_much_time_interval") {?>
+  <div class="alert alert-danger text-center">
+    <strong>Time interval is so long.</strong> If you want to make long time reservations: <a href="loggedin_contactus.php?durum=ok">Contact Us</a>
+  </div>
+<?php }?>
 <!-- Cars -->
 <div class="container mt-3">
   <div class="row featurette">

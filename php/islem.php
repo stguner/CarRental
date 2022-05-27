@@ -205,11 +205,11 @@ if (isset($_POST['kullaniciduzenle'])) {
 
 	if ($update) {
 
-		Header("Location:admin_edit_customers.php?kullanici_id=$kullanici_id&durum=ok");
+		Header("Location:admin_edit_customers.php?kullanici_id=$kullanici_id&guncellendi=ok");
 
 	} else {
 
-		Header("Location:admin_edit_customers.php?kullanici_id=$kullanici_id&durum=no");
+		Header("Location:admin_edit_customers.php?kullanici_id=$kullanici_id&guncellendi=no");
 	}
 
 }

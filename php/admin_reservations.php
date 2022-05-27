@@ -67,7 +67,7 @@ $rezervasyonsor=$conn->prepare("select * from reservations");
             <?php echo $rezervasyoncek['situation'] ?>
           <td>
             <center><a
-                href="islem_admin_reservations.php?reservationid=<?php echo $rezervasyoncek['reservationid']; ?>"><button
+                href="#"><button
                   class="btn btn-primary btn-xs">Edit</button></a></center>
           </td>
           <td>

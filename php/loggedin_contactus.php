@@ -52,7 +52,7 @@ background-position: center center; background-attachment: fixed; ; height: 100v
   <!-- Who we are bitiş-->
 
   <!-- Contact Us başlangıç-->
-  <div class="container-fluid">
+  <div class="container-fluid mb-2">
     <div class="row">
       <div class="col-md-6">
         <section class="main-section container mt-4">
@@ -139,7 +139,7 @@ background-position: center center; background-attachment: fixed; ; height: 100v
 </section>
 
 <?php 
-  include 'footer.php';
+  include 'fixed-footer.php';
   ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

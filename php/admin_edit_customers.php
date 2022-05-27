@@ -19,11 +19,21 @@ $kullanicicek=$kullanicisor->fetch(PDO::FETCH_ASSOC);
   </div>
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Edit Customer Informations</h1>
+    <?php /*Başarılı kayıt */ if ($_GET['guncellendi']=="ok") {?>
+      <div class="alert alert-success text-center">
+        <strong >SUCCESS!</strong> Customer information changed.
+        </div>
+    <?php }?>
+    <?php /*Başarılı kayıt */ if ($_GET['guncellendi']=="no") {?>
+      <div class="alert alert-danger text-center">
+        <strong>ERROR!</strong> Something going wrong while changing customer information.
+        </div>
+    <?php }?>
   </div>
   <!-- CONTENT -->
   
   <form action="islem.php" method="POST" id="demo-form2" data-parsley-validate
-    class="form-horizontal col-md-12">
+    class="form-horizontal col-md-12 mb-5">
 
     <div class="form-group">
       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="firstname"><b>Registeration Time </b> <span
@@ -154,7 +164,7 @@ $kullanicicek=$kullanicisor->fetch(PDO::FETCH_ASSOC);
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-<?php include 'fixed-footer.php'; ?>
+<?php include 'footer.php'; ?>
 </body>
 
 </html>

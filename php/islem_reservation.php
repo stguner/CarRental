@@ -7,41 +7,40 @@ session_start();
 
 //UserAccount - Reservation
 if(isset($_POST['continue_renting'])){
-    islemKontrol();
     $t=time();
     $currentTime = (date("Y-m-d",$t));
     $_SESSION['startDate'] = $_POST['startDate'];
     $_SESSION['endDate'] = $_POST['endDate'];
     $_SESSION['selectedCar'] = $_POST['car'];
     $datediff = strtotime($_SESSION['endDate']) - strtotime($_SESSION['startDate']);
+    
     if($_SESSION['startDate'] >= $currentTime){
         if($_SESSION['startDate'] < $_SESSION['endDate']){
             $time_interval = round($datediff / (60 * 60 * 24));
             if($_SESSION['selectedCar']=='MERCEDES'){
-               $_SESSION['price']= $time_interval*150;
+               $_SESSION['price']= ($time_interval+1)*150;
             } 
             if($_SESSION['selectedCar']=='BMW'){
-                $_SESSION['price']= $time_interval*100;
+                $_SESSION['price']= ($time_interval+1)*100;
              }
              if($_SESSION['selectedCar']=='HONDA'){
-               $_SESSION['price']= $time_interval*50;
+               $_SESSION['price']= ($time_interval+1)*50;
             }
             if($_SESSION['selectedCar']=='MUSTANG'){
-                $_SESSION['price']= $time_interval*200;
+                $_SESSION['price']= ($time_interval+1)*200;
              }
             header("Location:loggedin_reservation.php?durum=ok&rezervasyon_sil=waiting");
         }else{
-            header("Location:checkout.php?durum=false_rentDate");
+            header("Location:loggedin_cars.php?durum=false_rentDate");
         }
     }else{
-        header("Location:checkout.php?durum=past_rentDate");
+        header("Location:loggedin_cars.php?durum=past_rentDate");
     }
     
 }
 
 //UserAccount - Rezervasyon tamamlama
 if(isset($_POST['make_reservation'])){
-    islemKontrol();
     $_SESSION['carid'] = $_POST['carid'];
     $_SESSION['carName'] = $_POST['carName'];
     $startDate = $_SESSION['startDate'];
@@ -49,7 +48,7 @@ if(isset($_POST['make_reservation'])){
     $customerid = $_SESSION['kullanici_id'];
     $_SESSION['stock'] = $_POST['stock'];
 if($_SESSION['stock'] <= 0){
-    header("Location:checkout.php?durum=outOfStock");
+    header("Location:loggedin_cars.php?durum=outOfStock");
 }else{
             $makeReservation=$conn->prepare("INSERT INTO reservations SET
                     startDate=:startDate,
@@ -92,7 +91,6 @@ if($_SESSION['stock'] <= 0){
 
 //UserAccount- Rezervasyon Sil
 if ($_GET['rezervasyon_sil']=="ok") {
-    islemKontrol();
 	$delete=$conn->prepare("DELETE from reservations where reservationid=:id");
 	$control=$delete->execute(array(
 		'id' => $_GET['reservationid']

@@ -91,7 +91,7 @@ $kullanicisor->execute();
                     </td>
                     <td>
                       <center><a
-                          href="admin_edit_customers.php?kullanici_id=<?php echo $kullanicicek['id']; ?>"><button
+                          href="admin_edit_customers.php?kullanici_id=<?php echo $kullanicicek['id']; ?>&guncellendi=waiting"><button
                             class="btn btn-primary btn-xs">Edit</button></a></center>
                     </td>
                     <td>

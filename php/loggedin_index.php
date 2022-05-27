@@ -33,7 +33,7 @@ include 'loggedin_navbar.php' ;
         <div class="carousel-caption text-start">
           <h1 class="text-light">MUSTANG</h1>
           <p class="text-light"> <b>MODEL 2022</b> </p>
-          <p><a class="btn btn-lg btn-dark" href="../php/checkout.php?durum=ok">Rent Now</a></p>
+          <p><a class="btn btn-lg btn-dark" href="../php/checkout.php?durum=ok&selectedCar=MUSTANG">Rent Now</a></p>
         </div>
       </div>
     </div>
@@ -48,7 +48,7 @@ include 'loggedin_navbar.php' ;
         <div class="carousel-caption">
           <h1>BMW</h1>
           <p> <b> MODEL 2022</b></p>
-          <p><a class="btn btn-lg btn-dark" href="../php/checkout.php?durum=ok">Rent Now</a></p>
+          <p><a class="btn btn-lg btn-dark" href="../php/checkout.php?durum=ok&selectedCar=BMW">Rent Now</a></p>
         </div>
       </div>
     </div>
@@ -64,7 +64,7 @@ include 'loggedin_navbar.php' ;
         <div class="carousel-caption text-end">
           <h1 class="text-light">MERCEDES</h1>
           <p class="text-light"> <b> MODEL 2020</b></p>
-          <p><a class="btn btn-lg btn-dark" href="../php/checkout.php?durum=ok">Rent Now</a></p>
+          <p><a class="btn btn-lg btn-dark" href="../php/checkout.php?durum=ok&selectedCar=MERCEDES">Rent Now</a></p>
         </div>
       </div>
     </div>
@@ -79,7 +79,7 @@ include 'loggedin_navbar.php' ;
         <div class="carousel-caption text-end">
           <h1 class="text-light">HONDA</h1>
           <p class="text-light"> <b>MODEL 2021</b> </p>
-          <p><a class="btn btn-lg btn-dark" href="../php/checkout.php?durum=ok">Rent Now</a></p>
+          <p><a class="btn btn-lg btn-dark" href="../php/checkout.php?durum=ok&selectedCar=HONDA">Rent Now</a></p>
         </div>
       </div>
     </div>
@@ -110,7 +110,7 @@ include 'loggedin_navbar.php' ;
         voluptatem dolorem numquam aperiam culpa fuga libero deleniti nesciunt minus quia nostrum vero. Id, eius. Natus
         nesciunt voluptatem minus, autem provident reprehenderit fugiat illum sit saepe repudiandae possimus, modi
         maiores debitis quis! Animi architecto maxime ipsum?</p>
-      <p><a class="btn btn-secondary" href="../php/checkout.php"> Rent Mercedes </a></p>
+      <p><a class="btn btn-secondary" href="../php/checkout.php?durum=ok&selectedCar=MERCEDES"> Rent Mercedes </a></p>
     </div>
 
     <div class="col-lg-4">
@@ -122,7 +122,7 @@ include 'loggedin_navbar.php' ;
         aliquid animi magni similique recusandae? Debitis ipsa voluptatibus, explicabo corporis, deleniti amet a quos
         quo provident soluta atque officia deserunt velit ratione delectus? Pariatur sint voluptatem non magnam aliquid,
         incidunt facilis quidem rerum ipsum, delectus, voluptas enim.</p>
-      <p><a class="btn btn-secondary" href="../php/checkout.php">Rent BMW</a></p>
+      <p><a class="btn btn-secondary" href="../php/checkout.php?durum=ok&selectedCar=BMW">Rent BMW</a></p>
     </div>
     <div class="col-lg-4">
       <img src="../img/honda.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140" role="img"
@@ -134,7 +134,7 @@ include 'loggedin_navbar.php' ;
         numquam, quae molestiae, nihil voluptatem soluta dolor voluptas quas? Eum libero cumque quia commodi ducimus
         laboriosam architecto quo accusantium odio quaerat corporis itaque ipsum magni quos modi, eligendi et similique
         nobis natus, voluptate mollitia! Repudiandae!</p>
-      <p><a class="btn btn-secondary" href="../php/checkout.php">Rent Honda</a></p>
+      <p><a class="btn btn-secondary" href="../php/checkout.php?durum=ok&selectedCar=HONDA">Rent Honda</a></p>
     </div>
   </div>
 

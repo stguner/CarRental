@@ -6,21 +6,7 @@ $kullanicisor->execute(array(
 		));
 $kullanicicek=$kullanicisor->fetch(PDO::FETCH_ASSOC)
 ?>
-<?php /*Başarılı kayıt */ if ($_GET['durum']=="false_rentDate") {?>
-  <div class="alert alert-danger text-center">
-    <strong>Invalid time intervals.</strong>Please fill the form carefully.
-  </div>
-<?php }?>
-<?php /*Başarılı kayıt */ if ($_GET['durum']=="past_rentDate") {?>
-  <div class="alert alert-danger text-center">
-    <strong>You cannot make a reservation on a past date.</strong>Please fill the form carefully.
-  </div>
-<?php }?>
-<?php /*Başarılı kayıt */ if ($_GET['durum']=="outOfStock") {?>
-      <div class="alert alert-danger text-center">
-        <strong >The car which is you selected is out of stock.</strong> Please choose another car.
-        </div>
-    <?php }?>
+
 
 <section class="main-section container">
   <div class="card border-0">
