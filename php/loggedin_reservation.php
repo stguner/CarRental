@@ -61,10 +61,9 @@ $arabacek=$arabasor->fetch(PDO::FETCH_ASSOC)
               <input type="text" value="<?php echo $_SESSION['price']; ?>$" disabled>
             </div>
           </div>
-          <input type="text" name="carid" value="<?php echo $_SESSION['onReservation'];?>">
           <input type="hidden" name="carid" value="<?php echo $arabacek['car_id'];?>">
           <input type="hidden" name="carName" value="<?php echo $arabacek['name'];?>">
-          <input type="text" name="stock" disabled value="<?php echo $arabacek['stock'];?>">
+          <input type="hidden" name="stock" disabled value="<?php echo $arabacek['stock'];?>">
           <input type="submit" name="make_reservation" class="btn btn-orange w-100 mt-3" value="Confirm and Make Reservation">
           <p class="text-center mt-3"><span class="text-danger">!!!</span> You still will be able to cancel and edit reservation informations after this progress. Go to 
           <a href="user_account.php?durum=ok" class="text-success text-decoration-none font-weight-bold">'Reservations'</a> page to edit your reservation informations...</p>

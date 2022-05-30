@@ -6,10 +6,12 @@ session_start();
 
 //UserAccount- Şifre Değiştirme
 if (isset($_POST['sifre_degistirme'])) {
-    $kullanici_password=$_POST['password1'];
-    $kullanici_confirmPassword=$_POST['password2'];
+    $kullanici_password1=$_POST['password1'];
+    $kullanici_confirmPassword1=$_POST['password2'];
+    $kullanici_password = md5($kullanici_password1);
+    $kullanici_confirmPassword = md5($kullanici_confirmPassword1);
 
-    if(strlen($kullanici_password) >= 6){
+    if(strlen($kullanici_password1) >= 6){
 
         if($kullanici_password==$kullanici_confirmPassword){
         $ayarkaydet=$conn->prepare("UPDATE customers SET
@@ -17,7 +19,7 @@ if (isset($_POST['sifre_degistirme'])) {
         WHERE id=:id");
 
         $update=$ayarkaydet->execute(array(
-        'password' => $_POST['password1'],
+        'password' => $kullanici_password,
         'id' => $_SESSION['kullanici_id']
         ));
             if($update){

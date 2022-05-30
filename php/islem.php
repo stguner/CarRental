@@ -7,7 +7,8 @@ include 'function.php';
 if (isset($_POST['login'])) {
 	
 	$kullanici_email=$_POST['kullanici_email']; 
-	$kullanici_password=$_POST['kullanici_password'];
+	$kullanici_password1=$_POST['kullanici_password'];
+    $kullanici_password = md5($kullanici_password1);
 
 	$kullanicisor=$conn->prepare("select * from customers where email=:email and yetki=:yetki and password=:password");
 	$kullanicisor->execute(array(
@@ -123,14 +124,16 @@ if (isset($_POST['contact_loggedin'])) {
 if(isset($_POST['signup'])){
     $kullanici_email= $_POST['email'];
     $kullanici_phoneNumber= $_POST['phoneNumber'];
-    $kullanici_password=$_POST['password'];
-    $kullanici_confirmPassword=$_POST['confirmPassword'];
+    $kullanici_password1=$_POST['password'];
+    $kullanici_confirmPassword1=$_POST['confirmPassword'];
+    $kullanici_password = md5($kullanici_password1);
+    $kullanici_confirmPassword = md5($kullanici_confirmPassword1);
     $kullanici_firstname= $_POST['firstname'];
     $kullanici_surname= $_POST['surname'];
 
 
     if($kullanici_password == $kullanici_confirmPassword){
-        if(strlen($kullanici_password)>=6){
+        if(strlen($kullanici_password1)>=6){
             $kullanicisor=$conn->prepare("SELECT * FROM customers WHERE email=:email");
             $kullanicisor->execute(array(
                 'email' => $kullanici_email
@@ -289,10 +292,12 @@ if (isset($_POST['bilgi_duzenleme'])) {
 //UserAccount- Şifre Değiştirme
 
 if (isset($_POST['sifre_degistirme'])) {
-    $kullanici_password=$_POST['password1'];
-    $kullanici_confirmPassword=$_POST['password2'];
+    $kullanici_password1=$_POST['password1'];
+    $kullanici_confirmPassword1=$_POST['password2'];
+    $kullanici_password = md5($kullanici_password1);
+    $kullanici_confirmPassword = md5($kullanici_confirmPassword1);
 
-    if(strlen($kullanici_password) >= 6){
+    if(strlen($kullanici_password1) >= 6){
 
     
         if($kullanici_password==$kullanici_confirmPassword){
@@ -301,7 +306,7 @@ if (isset($_POST['sifre_degistirme'])) {
 		    WHERE id=:id");
 
 	        $update=$ayarkaydet->execute(array(
-		    'password' => $_POST['password1'],
+		    'password' => $kullanici_password['password1'],
             'id' => $_SESSION['kullanici_id']
 		    ));
 	        if($update){
@@ -322,11 +327,13 @@ if (isset($_POST['sifre_degistirme'])) {
 
 //Not Loggedin- Şifre Değiştirme
 if (isset($_POST['not_loggedin_change_password'])) {
-    $kullanici_password=$_POST['password1'];
-    $kullanici_confirmPassword=$_POST['password2'];
+    $kullanici_password1=$_POST['password1'];
+    $kullanici_confirmPassword1=$_POST['password2'];
+    $kullanici_password = md5($kullanici_password1);
+    $kullanici_confirmPassword = md5($kullanici_confirmPassword1);
     $kullanici_email=$_POST['kullanici_email'];
 
-    if(strlen($kullanici_password) >= 6){
+    if(strlen($kullanici_password1) >= 6){
 
     
         if($kullanici_password==$kullanici_confirmPassword){

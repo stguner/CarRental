@@ -136,11 +136,6 @@ $kullanicicek=$kullanicisor->fetch(PDO::FETCH_ASSOC)
                 <option value="MUSTANG">MUSTANG</option>
                 <option value="HONDA">HONDA</option>
                 <?php }?>
-
-          
-
-
-
                 <hr>
               </div>
               <input type="submit" name="continue_renting" class="btn btn-orange w-100 mt-3" value="Continue">
