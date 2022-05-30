@@ -39,6 +39,7 @@ $rezervasyonsor=$conn->prepare("select * from reservations");
           <th>Car Name</th>
           <th>Total Price</th>
           <th>Situation</th>
+          <th>Customer ID</th>
           <th></th>
           <th></th>
         </tr>
@@ -65,6 +66,10 @@ $rezervasyonsor=$conn->prepare("select * from reservations");
           </td>
           <td>
             <?php echo $rezervasyoncek['situation'] ?>
+          </td>
+          <td>
+            <?php echo $rezervasyoncek['customerid'] ?>
+          </td>
           <td>
             <center><a
                 href="#"><button

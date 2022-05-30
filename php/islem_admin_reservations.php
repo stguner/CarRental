@@ -14,6 +14,12 @@ if ($_GET['addStock']=="deleteReservation") {
 		'id' => $_GET['reservationid']
 		));
 	if ($push) {
+		$increaseStock=$conn->prepare("UPDATE cars SET stock=stock+1 WHERE
+                    car_id=:carid
+                    ");
+                    $increase=$increaseStock->execute(array(
+                    'carid' => $_GET['carid']
+        ));
 		header("location:admin_reservations.php?addStock=successfull_deleteReservation");
 		exit;
 	} else {
