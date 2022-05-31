@@ -206,7 +206,7 @@ if ($_GET['addStock']=="decrease_totalCarNumber") {
 		'carid' => $_GET['car_id']
 		));
         if ($push) {
-			if($_GET['stock']>=$_GET['totalCarNumber']){
+			if($_GET['totalCarNumber']-$_GET['atRepair'] <= $_GET['stock']){
 				$decrease=$conn->prepare("UPDATE cars SET stock=stock-1 where car_id=:carid");
 				$push=$decrease->execute(array(
 				'carid' => $_GET['car_id']
@@ -221,10 +221,10 @@ if ($_GET['addStock']=="decrease_totalCarNumber") {
     }
 }
 
-//Admin - Total Araba adedini azaltma
+//Admin - Total Araba adedini Arttırma
 if ($_GET['addStock']=="increase_totalCarNumber") {
 	islemKontrol();
-	$delete=$conn->prepare("UPDATE cars SET totalCarNumber=totalCarNumber+1 WHERE car_id=:carid");
+	$delete=$conn->prepare("UPDATE cars SET totalCarNumber=totalCarNumber+1,stock=stock+1 WHERE car_id=:carid");
 	$push=$delete->execute(array(
 		'carid' => $_GET['car_id']
 		));

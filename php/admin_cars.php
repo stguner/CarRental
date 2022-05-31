@@ -80,9 +80,9 @@ $arabasor=$conn->prepare("select * from cars");
         <tr>
           <th>Car Name</th>
           <th>Price</th>
-          <th>Stock</th>
           <th>Total Car Number</th>
           <th>Repairing Car</th>
+          <th>Stock</th>
         </tr>
       </thead>
 
@@ -111,21 +111,6 @@ $arabasor=$conn->prepare("select * from cars");
             </div>
           </td>
           <td>
-            <div class="row">
-              <div class="col-md-2">
-                <?php echo $arabacek['stock'] ?>
-              </div>
-              <div class="col-md-5">
-                <center><a href="islem_admin_reservations.php?car_id=<?php echo $arabacek['car_id'];?>&stock=<?php echo $arabacek['stock'];?>&rezervasyon_sil=waiting&addStock=increase&totalCarNumber=<?php echo $arabacek['totalCarNumber'];?>"><button
-                      class="btn btn-success btn-xs">Increase</button></a></center>
-              </div>
-              <div class="col-md-5">
-                <center><a href="islem_admin_reservations.php?car_id=<?php echo $arabacek['car_id']; ?>&stock=<?php echo $arabacek['stock'];?>&rezervasyon_sil=ok&addStock=decrease"><button
-                      class="btn btn-danger btn-xs">Decrease</button></a></center>
-              </div>
-            </div>
-          </td>
-          <td>
           <div class="row">
               <div class="col-md-2">
                 <?php echo $arabacek['totalCarNumber'] ?>
@@ -135,7 +120,7 @@ $arabasor=$conn->prepare("select * from cars");
                       class="btn btn-success btn-xs">Increase</button></a></center>
               </div>
               <div class="col-md-5">
-                <center><a href="islem_admin_reservations.php?car_id=<?php echo $arabacek['car_id']; ?>&stock=<?php echo $arabacek['stock'];?>&totalCarNumber=<?php echo $arabacek['totalCarNumber'];?>&addStock=decrease_totalCarNumber"><button
+                <center><a href="islem_admin_reservations.php?car_id=<?php echo $arabacek['car_id']; ?>&stock=<?php echo $arabacek['stock'];?>&totalCarNumber=<?php echo $arabacek['totalCarNumber'];?>&addStock=decrease_totalCarNumber&atRepair=<?php echo $arabacek['atRepair'];?>"><button
                       class="btn btn-danger btn-xs">Decrease</button></a></center>
               </div>
             </div>
@@ -154,6 +139,12 @@ $arabasor=$conn->prepare("select * from cars");
                       class="btn btn-danger btn-xs">Come from Repair</button></a></center>
               </div>
             </div>
+          </td>
+          <td>
+            <div class="row">
+              <div class="col-md-2">
+                <?php echo $arabacek['stock'] ?>
+              </div>
           </td>
         </tr>
         <?php } ?>

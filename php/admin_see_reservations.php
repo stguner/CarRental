@@ -5,6 +5,11 @@ $kullanicisor->execute(array(
   'id' => $_GET['kullanici_id']
   ));
 
+  $kullanicisor1=$conn->prepare("SELECT * FROM customers where id=:id");
+  $kullanicisor1->execute(array(
+    'id' => $_GET['kullanici_id']
+    ));
+    $kullanicicek1=$kullanicisor1->fetch(PDO::FETCH_ASSOC)
 ?>
 
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
@@ -17,7 +22,7 @@ $kullanicisor->execute(array(
     </div>
   </div>
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Edit Customer Informations</h1>
+    <h1 class="h2">Specified Reservation History</h1>
     <?php /*Başarılı kayıt */ if ($_GET['guncellendi']=="ok") {?>
       <div class="alert alert-success text-center">
         <strong >SUCCESS!</strong> Customer information changed.
@@ -30,7 +35,7 @@ $kullanicisor->execute(array(
     <?php }?>
   </div>
   <!-- CONTENT -->
-  
+  <p> Information about customer, <strong> <?php echo $kullanicicek1['firstname'] ?> <?php echo $kullanicicek1['surname'] ?></strong></p>
   <table id="datatable-responsive" style="table-layout:fixed;width=100%;" class="table table-striped table-bordered dt-responsive nowrap table-sm table-condensed" cellspacing="0">
                 <thead>
                   <tr>
