@@ -28,6 +28,45 @@ if ($_GET['addStock']=="deleteReservation") {
 	}
 }
 
+//Admin - Arabaya repair car Ekleme
+if ($_GET['addStock']=="increase_repair_car") {
+	islemKontrol();
+	if($_GET['atRepair'] <= $_GET['totalCarNumber'] && $_GET['stockCarNumber'] > 0 ){
+		$delete=$conn->prepare("UPDATE cars SET atRepair=atRepair+1,stock=stock-1 WHERE car_id=:carid");
+	$push=$delete->execute(array(
+		'carid' => $_GET['car_id']
+		));
+		if ($push){
+		header("location:admin_cars.php?addStock=basarili_increase");
+		} else {
+		header("location:admin_cars.php?addStock=basarisiz_increase");
+		}
+	}else{
+		header("location:admin_cars.php?addStock=reachedMax");
+	}
+}
+
+//Admin - Arabadan repair car  Çıkarma
+if ($_GET['addStock']=="decrease_repair_car") {
+	islemKontrol();
+    if($_GET['atRepair'] > 0){
+        $decrease=$conn->prepare("UPDATE cars SET atRepair=atRepair-1,stock=stock+1 where car_id=:carid");
+	$push=$decrease->execute(array(
+		'carid' => $_GET['car_id']
+		));
+        if ($push) {
+            header("Location:admin_cars.php?addStock=basarili_decrease");
+			exit;
+        } else {
+            header("location:admin_cars.php?addStock=basarisiz_decrease");
+			exit;
+        }
+    }else{
+        header("Location:admin_cars.php?addStock=zeroCar");
+		exit;
+    }
+}
+
 
 //Admin - Arabaya Stok Ekleme
 if ($_GET['addStock']=="increase") {

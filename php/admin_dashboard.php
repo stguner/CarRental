@@ -41,6 +41,15 @@ $kullanicisor=$conn->prepare("select * from customers");
       $available += $uygunarabacek['stock'];
     }
 
+    //Toplam Araç Sayısı
+    $atRepairSor=$conn->prepare("select atRepair from cars");
+	$atRepairSor->execute();
+    $atRepair = "0";
+    while($atRepairCek=$atRepairSor->fetch(PDO::FETCH_ASSOC)){
+      $atRepair += $atRepairCek['atRepair'];
+    }
+    
+
     //Rented Car Sayısı
     $rezervasyonsayisisor=$conn->prepare("select * from reservations");
 	$rezervasyonsayisisor->execute();
@@ -116,6 +125,7 @@ $kullanicisor=$conn->prepare("select * from customers");
             <li class="list-group-item">Total Car Number: <?php echo $totalCarNumber; ?></li>
             <li class="list-group-item">Available Cars: <?php echo $available; ?></li>
             <li class="list-group-item">Rented Cars: <?php echo $rezervasyonsayisi; ?></li>
+            <li class="list-group-item">at Repairing <?php echo $atRepair; ?></li>
           </ul>
           <div class="card-body">
             to see all cars:

@@ -96,6 +96,11 @@ $kullanicisor->execute();
                     </td>
                     <td>
                       <center><a
+                          href="admin_see_reservations.php?kullanici_id=<?php echo $kullanicicek['id']; ?>&guncellendi=waiting"><button
+                            class="btn btn-primary btn-xs">See all reservations</button></a></center>
+                    </td>
+                    <td>
+                      <center><a
                           href="islem.php?kullanici_id=<?php echo $kullanicicek['id']; ?>&kullanicisil=ok"><button
                             class="btn btn-danger btn-xs">Delete</button></a></center>
                     </td>

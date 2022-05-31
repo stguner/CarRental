@@ -82,6 +82,7 @@ $arabasor=$conn->prepare("select * from cars");
           <th>Price</th>
           <th>Stock</th>
           <th>Total Car Number</th>
+          <th>Repairing Car</th>
         </tr>
       </thead>
 
@@ -136,6 +137,21 @@ $arabasor=$conn->prepare("select * from cars");
               <div class="col-md-5">
                 <center><a href="islem_admin_reservations.php?car_id=<?php echo $arabacek['car_id']; ?>&stock=<?php echo $arabacek['stock'];?>&totalCarNumber=<?php echo $arabacek['totalCarNumber'];?>&addStock=decrease_totalCarNumber"><button
                       class="btn btn-danger btn-xs">Decrease</button></a></center>
+              </div>
+            </div>
+          </td>
+          <td>
+          <div class="row">
+              <div class="col-md-2">
+                <?php echo $arabacek['atRepair'] ?>
+              </div>
+              <div class="col-md-5">
+                <center><a href="islem_admin_reservations.php?car_id=<?php echo $arabacek['car_id'];?>&stockCarNumber=<?php echo $arabacek['stock'];?>&addStock=increase_repair_car&atRepair=<?php echo $arabacek['atRepair'];?>&totalCarNumber=<?php echo $arabacek['totalCarNumber'];?>"><button
+                      class="btn btn-success btn-xs">Push to Repair</button></a></center>
+              </div>
+              <div class="col-md-5">
+                <center><a href="islem_admin_reservations.php?car_id=<?php echo $arabacek['car_id']; ?>&stockCarNumber=<?php echo $arabacek['stock'];?>&addStock=decrease_repair_car&atRepair=<?php echo $arabacek['atRepair'];?>&totalCarNumber=<?php echo $arabacek['totalCarNumber'];?>"><button
+                      class="btn btn-danger btn-xs">Come from Repair</button></a></center>
               </div>
             </div>
           </td>
