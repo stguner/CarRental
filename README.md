@@ -1,5 +1,5 @@
 # CarRental
-This project is being developed for the Akdeniz University Web Programming course.
+This project developed for the Akdeniz University Web Programming course.
 The website will be a simple car rental system. 
 Users will be able to rent a car between certain time intervals, make payments, create a user account and use simple user features such as changing passwords.
 There will be also an admin interface.
